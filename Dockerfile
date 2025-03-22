@@ -16,6 +16,12 @@ RUN docker-php-ext-install pdo pdo_mysql intl zip opcache \
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
+
+# Verify installation
+RUN node -v && npm -v
+
 # Create user and set permissions
 RUN useradd -m application && chown -R application:application /webapp
 
