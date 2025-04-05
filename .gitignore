@@ -30,3 +30,8 @@ Homestead.json
 auth.json
 
 /.idea
+**/caddy
+frankenphp
+frankenphp-worker.php
+
+/.cache
