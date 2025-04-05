@@ -22,6 +22,12 @@ WORKDIR /var/www
 
 COPY . .
 
+RUN composer install && npm install
+
 RUN chown -R www-data:www-data /var/www
 
-ENTRYPOINT ["php", "artisan", "octane:frankenphp", "--host=0.0.0.0", "--port=8000"]
+USER www-data
+
+EXPOSE 8000
+
+CMD ["./run.sh"]
