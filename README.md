@@ -1,6 +1,6 @@
 # Real-time Stock Price Tracker
 
-![Alt Text](https://imgs.search.brave.com/PYsrQIEQAL_77HSCn98a2xr9vtp6f2cGuGntNai53DM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bml0/ZWRmaW50ZWNoLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8wOS9ldmFsdWF0/ZWQtcmVhbC10aW1l/LWRhdGEtbWVudS0w/MS5zdmc)
+![Alt Text](https://www.flaticon.com/free-icon/stocks_4946378)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-ready-brightgreen)
