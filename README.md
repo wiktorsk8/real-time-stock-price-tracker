@@ -1,4 +1,4 @@
-# Laravel BTC Dashboard
+# Real-time Stock Price Tracker
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-ready-brightgreen)
