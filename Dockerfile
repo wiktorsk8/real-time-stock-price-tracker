@@ -1,30 +1,31 @@
-FROM php:8.4-fpm
+FROM dunglas/frankenphp
 
-WORKDIR /webapp
+# PHP
+RUN install-php-extensions \
+	pdo_mysql \
+	gd \
+	intl \
+	zip \
+	opcache
 
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    libonig-dev \
-    libicu-dev \
-    unzip \
-    curl \
-    zip \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y unzip libzip-dev \
+    && docker-php-ext-install zip \
+    && docker-php-ext-install pcntl
 
-RUN docker-php-ext-install pdo pdo_mysql intl zip opcache \
-    && docker-php-ext-enable opcache
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# JS
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
 
-# Create user and set permissions
-RUN useradd -m application && chown -R application:application /webapp
+WORKDIR /var/www
 
-VOLUME ["/webapp"]
+COPY . .
 
-COPY . /webapp
+RUN chown -R www-data:www-data /var/www
 
-USER application
+USER www-data
 
-EXPOSE 9000
+EXPOSE 8000
 
-CMD ["php-fpm"]
+ENTRYPOINT ["./run.sh"]
