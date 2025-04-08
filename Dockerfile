@@ -22,12 +22,10 @@ WORKDIR /var/www
 
 COPY . .
 
-RUN composer install && npm install
-
 RUN chown -R www-data:www-data /var/www
 
 USER www-data
 
 EXPOSE 8000
 
-CMD ["./run.sh"]
+ENTRYPOINT ["./run.sh"]

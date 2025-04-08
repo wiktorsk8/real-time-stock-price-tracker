@@ -10,7 +10,7 @@ const form = reactive({
 })
 
 function submit() {
-  router.post('/register', form)
+  router.post('/registerUser', form)
 }
 </script>
 
