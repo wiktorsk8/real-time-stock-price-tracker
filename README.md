@@ -1,6 +1,6 @@
 # Real-time Stock Price Tracker
 
-![Alt Text](https://www.flaticon.com/free-icon/stocks_4946378)
+![Alt Text](https://cdn-icons-png.flaticon.com/512/4946/4946378.png)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-ready-brightgreen)
